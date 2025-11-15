@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прием в 1 класс - Школа №42 г.о. Самара</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --primary-purple: #8B5FBF;
+            --dark-purple: #6B46C1;
+            --light-purple: #9F7AEA;
+            --accent-pink: #D53F8C;
+            --lavender: #B794F4;
+            --deep-purple: #553C9A;
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --card-gradient: linear-gradient(135deg, #8B5FBF 0%, #6B46C1 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #2D3748;
+            line-height: 1.6;
+        }
+
+        .floating-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(159, 122, 234, 0.1);
+            animation: float 20s infinite linear;
+        }
+
+        .shape-1 { width: 300px; height: 300px; top: 10%; left: 5%; animation-delay: 0s; }
+        .shape-2 { width: 200px; height: 200px; top: 60%; right: 10%; animation-delay: 5s; }
+        .shape-3 { width: 150px; height: 150px; bottom: 20%; left: 15%; animation-delay: 10s; }
+        .shape-4 { width: 250px; height: 250px; top: 30%; right: 20%; animation-delay: 15s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-30px) rotate(120deg); }
+            66% { transform: translateY(30px) rotate(240deg); }
+        }
+
+        .admission-hero {
+            background: var(--card-gradient);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .admission-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .admission-hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #fff, #E9D8FD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        .admission-hero p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        .admission-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(139, 95, 191, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--card-gradient);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(139, 95, 191, 0.3);
+        }
+
+        .info-card.warning::before {
+            background: linear-gradient(135deg, #F56565 0%, #E53E3E 100%);
+        }
+
+        .info-card.success::before {
+            background: linear-gradient(135deg, #48BB78 0%, #38A169 100%);
+        }
+
+        .info-card h2 {
+            color: var(--deep-purple);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--card-gradient);
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(139, 95, 191, 0.05);
+            border-radius: 15px;
+            border-left: 4px solid var(--light-purple);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            background: rgba(139, 95, 191, 0.1);
+            transform: translateX(10px);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--card-gradient);
+            border: 4px solid white;
+            box-shadow: 0 0 0 3px var(--light-purple);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--dark-purple);
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .document-item {
+            background: linear-gradient(135deg, #F7FAFC 0%, #EDF2F7 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid var(--light-purple);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .document-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--card-gradient);
+        }
+
+        .document-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(139, 95, 191, 0.2);
+        }
+
+        .document-item h4 {
+            color: var(--dark-purple);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .contact-person {
+            background: linear-gradient(135deg, #FFFFFF 0%, #F7FAFC 100%);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(139, 95, 191, 0.15);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(139, 95, 191, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-person::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--card-gradient);
+        }
+
+        .contact-person:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(139, 95, 191, 0.25);
+        }
+
+        .contact-person h4 {
+            color: var(--dark-purple);
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .contact-person .phone {
+            color: var(--primary-purple);
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .contact-person .phone:hover {
+            color: var(--accent-pink);
+        }
+
+        .address-list {
+            columns: 2;
+            column-gap: 40px;
+        }
+
+        .address-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .address-list li {
+            margin-bottom: 12px;
+            padding: 12px 15px 12px 45px;
+            background: rgba(139, 95, 191, 0.05);
+            border-radius: 10px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .address-list li:hover {
+            background: rgba(139, 95, 191, 0.1);
+            transform: translateX(5px);
+        }
+
+        .address-list li::before {
+            content: '🏠';
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+        }
+
+        .download-section {
+            background: linear-gradient(135deg, #8B5FBF 0%, #6B46C1 100%);
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.2"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+        }
+
+        .download-section h2 {
+            color: white;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .download-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .important-note {
+            background: linear-gradient(135deg, #FEF5FF 0%, #FAF0FF 100%);
+            border: 2px solid var(--lavender);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .important-note::before {
+            content: '💡';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 1.2em;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .address-list {
+                columns: 1;
+            }
+            
+            .documents-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .admission-hero h1 {
+                font-size: 2.2em;
+            }
+            
+            .download-links {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-card {
+                padding: 25px;
+            }
+        }
+
+        /* Декоративные элементы */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            animation: sparkle 3s infinite linear;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Плавающий фон -->
+    <div class="floating-bg">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+    </div>
+
+    <!-- Хедер -->
+    <div class="admission-hero">
+        <div class="hero-content">
+            <div class="admission-container">
+                <h1><i class="fas fa-graduation-cap"></i> ПРИЕМ В 1 КЛАСС</h1>
+                <p>2025-2026 учебный год • Школа №42 г.о. Самара</p>
+                <div class="download-links" style="justify-content: center; margin-top: 30px;">
+                    <a href="#" class="download-btn pulse">
+                        <i class="fas fa-scroll"></i>Реестр заявлений
+                    </a>
+                    <a href="#" class="download-btn pulse">
+                        <i class="fas fa-file-contract"></i>Приказ о зачислении
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down" style="color: white; font-size: 24px;"></i>
+        </div>
+    </div>
+
+    <div class="admission-container">
+        <!-- Важное уведомление -->
+        <div class="info-card warning">
+            <h2><i class="fas fa-exclamation-circle"></i> Важная информация</h2>
+            <p>Уважаемые родители будущих первоклассников! Администрация МБОУ «Школа № 42» г.о. Самара рада приветствовать вас.</p>
+        </div>
+
+        <!-- График приема -->
+        <div class="info-card">
+            <h2><i class="fas fa-calendar-alt"></i> График приема на 2025-2026 учебный год</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date"><i class="fas fa-pencil-alt"></i> С 17 марта 2025 года</div>
+                    <div>Заполнение черновиков заявлений на ЕПГУ</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date"><i class="fas fa-play-circle"></i> С 1 апреля 2025 года (09:00)</div>
+                    <div>Начало подачи заявлений в 1 классы</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date"><i class="fas fa-hourglass-half"></i> 1 апреля - 30 июня 2025 года</div>
+                    <div>Период регистрации заявлений</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date"><i class="fas fa-check-double"></i> 1-30 июня 2025 года</div>
+                    <div>Сверка данных с оригиналами документов</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date"><i class="fas fa-clipboard-check"></i> 1-3 июля 2025 года</div>
+                    <div>Принятие решений по заявлениям</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date"><i class="fas fa-door-open"></i> 6 июля - 5 сентября 2025 года</div>
+                    <div>Прием на свободные места</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Способы подачи заявлений -->
+        <div class="info-card">
+            <h2><i class="fas fa-route"></i> Способы подачи заявлений</h2>
+            <div class="documents-grid">
+                <div class="document-item">
+                    <h4><i class="fas fa-laptop"></i> Через ЕПГУ</h4>
+                    <p>Электронное обращение через Единый портал государственных услуг</p>
+                </div>
+                <div class="document-item">
+                    <h4><i class="fas fa-school"></i> Лично в школу</h4>
+                    <p>На бумажном носителе в образовательную организацию</p>
+                </div>
+                <div class="document-item">
+                    <h4><i class="fas fa-envelope"></i> Почтой России</h4>
+                    <p>Заказным письмом с уведомлением о вручении</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Контактная информация -->
+        <div class="info-card">
+            <h2><i class="fas fa-phone-alt"></i> Контактная информация</h2>
+            <div class="contact-grid">
+                <div class="contact-person">
+                    <h4>Мельникова Наталья Сергеевна</h4>
+                    <p><i class="fas fa-user-tie"></i> Заместитель директора по УР</p>
+                    <p><i class="fas fa-clock"></i> Суббота с 9:00 до 12:00</p>
+                    <a href="tel:+79297029140" class="phone"><i class="fas fa-phone"></i> 8-929-702-91-40</a>
+                </div>
+                <div class="contact-person">
+                    <h4>Каштанова Анна Михайловна</h4>
+                    <p><i class="fas fa-user-tie"></i> Заместитель директора</p>
+                    <p><i class="fas fa-clock"></i> Пн-Пт с 12:00 до 13:00</p>
+                    <a href="tel:+79083811666" class="phone"><i class="fas fa-phone"></i> 8-908-381-16-66</a>
+                </div>
+            </div>
+            <div style="margin-top: 25px; text-align: center; padding: 20px; background: rgba(139, 95, 191, 0.1); border-radius: 12px;">
+                <p><strong><i class="fas fa-phone-office"></i> Приемная директора:</strong> <a href="tel:+79999999999" style="color: var(--dark-purple); font-weight: bold;">266-58-67</a> (с 9:00 до 16:30)</p>
+            </div>
+        </div>
+
+        <!-- Остальные секции остаются с аналогичным стилем -->
+
+        <!-- Документы для скачивания -->
+        <div class="download-section">
+            <h2><i class="fas fa-download"></i> Документы для скачивания</h2>
+            <div class="download-links">
+                <a href="#" class="download-btn"><i class="fas fa-file-certificate"></i> Лицензия</a>
+                <a href="#" class="download-btn"><i class="fas fa-award"></i> Аккредитация</a>
+                <a href="#" class="download-btn"><i class="fas fa-book"></i> Устав школы</a>
+                <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Бланк заявления (PDF)</a>
+                <a href="#" class="download-btn"><i class="fas fa-file-word"></i> Бланк заявления (Word)</a>
+                <a href="#" class="download-btn"><i class="fas fa-shield-alt"></i> Согласие на обработку</a>
+                <a href="#" class="download-btn"><i class="fas fa-list-alt"></i> Правила приема</a>
+                <a href="#" class="download-btn"><i class="fas fa-users"></i> Категории граждан</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Создание sparkle эффекта
+        function createSparkles() {
+            const hero = document.querySelector('.admission-hero');
+            for (let i = 0; i < 20; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 3 + 's';
+                hero.appendChild(sparkle);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            createSparkles();
+            
+            // Анимация карточек при скролле
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Анимируем все карточки
+            document.querySelectorAll('.info-card, .document-item, .contact-person').forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease ' + (index * 0.1) + 's';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
