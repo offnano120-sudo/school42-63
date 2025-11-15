@@ -1,0 +1,222 @@
+/* Accessibility Styles for Visually Impaired */
+.accessibility-version {
+    font-family: Arial, sans-serif !important;
+}
+
+.accessibility-version * {
+    font-family: Arial, sans-serif !important;
+}
+
+/* High Contrast Mode */
+.accessibility-version.high-contrast {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+.accessibility-version.high-contrast .header,
+.accessibility-version.high-contrast .nav,
+.accessibility-version.high-contrast .footer,
+.accessibility-version.high-contrast .info-content,
+.accessibility-version.high-contrast .feature-card,
+.accessibility-version.high-contrast .program-card,
+.accessibility-version.high-contrast .news-card {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+}
+
+.accessibility-version.high-contrast .nav-link,
+.accessibility-version.high-contrast a,
+.accessibility-version.high-contrast .btn {
+    color: #ffff00 !important;
+    border-color: #ffff00 !important;
+}
+
+.accessibility-version.high-contrast .btn-primary {
+    background: #0000ff !important;
+    color: #ffffff !important;
+}
+
+.accessibility-version.high-contrast .btn-secondary {
+    background: #008000 !important;
+    color: #ffffff !important;
+}
+
+/* Large Text Mode */
+.accessibility-version.large-text {
+    font-size: 20px !important;
+    line-height: 1.8 !important;
+}
+
+.accessibility-version.large-text h1 {
+    font-size: 32px !important;
+}
+
+.accessibility-version.large-text h2 {
+    font-size: 28px !important;
+}
+
+.accessibility-version.large-text h3 {
+    font-size: 24px !important;
+}
+
+.accessibility-version.large-text p,
+.accessibility-version.large-text li,
+.accessibility-version.large-text span {
+    font-size: 20px !important;
+}
+
+/* Grayscale Mode */
+.accessibility-version.grayscale {
+    filter: grayscale(100%) !important;
+}
+
+/* Dyslexia Friendly Font */
+.accessibility-version.dyslexia-friendly {
+    font-family: "Comic Sans MS", "Trebuchet MS", Arial, sans-serif !important;
+    letter-spacing: 1px !important;
+    line-height: 2 !important;
+}
+
+/* Accessibility Panel */
+.accessibility-panel {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    border-radius: 10px 0 0 10px;
+    z-index: 10000;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+}
+
+.accessibility-panel.hidden {
+    transform: translateX(100%) translateY(-50%);
+}
+
+.accessibility-toggle {
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.accessibility-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 200px;
+}
+
+.accessibility-option {
+    background: #34495e;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.3s ease;
+}
+
+.accessibility-option:hover {
+    background: #4a6b8a;
+}
+
+.accessibility-option.active {
+    background: #e74c3c;
+}
+
+.accessibility-reset {
+    background: #c0392b !important;
+    margin-top: 10px;
+}
+
+/* Skip to main content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #e74c3c;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 0 0 4px 4px;
+    z-index: 10000;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Focus indicators */
+.accessibility-version a:focus,
+.accessibility-version button:focus,
+.accessibility-version input:focus {
+    outline: 3px solid #ff0000 !important;
+    outline-offset: 2px !important;
+}
+
+/* Print styles */
+@media print {
+    .accessibility-panel,
+    .accessibility-toggle {
+        display: none !important;
+    }
+    
+    .accessibility-version {
+        background: white !important;
+        color: black !important;
+        font-size: 12pt !important;
+    }
+}
+
+/* Mobile accessibility */
+@media (max-width: 768px) {
+    .accessibility-panel {
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        left: 0;
+        right: 0;
+        transform: none;
+        border-radius: 10px 10px 0 0;
+        padding: 10px;
+    }
+    
+    .accessibility-panel.hidden {
+        transform: translateY(100%);
+    }
+    
+    .accessibility-toggle {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .accessibility-options {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .accessibility-option {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+        font-size: 14px;
+        padding: 8px 5px;
+    }
+}
