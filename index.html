@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МБОУ "Школа №42" г. Самара - Официальный сайт</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <div class="logo">42</div>
+                <div class="school-name">
+                    <span class="main-name">Школа №42</span>
+                    <span class="sub-name">г. Самара</span>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Главная</a></li>
+                <li class="nav-dropdown">
+                    <a href="#info" class="nav-link">Сведения об ОО</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="info/basic-info.html">Основные сведения</a></li>
+                        <li><a href="info/structure.html">Структура и органы управления</a></li>
+                        <li><a href="info/documents.html">Документы</a></li>
+                        <li><a href="info/education.html">Образование</a></li>
+                        <li><a href="info/staff.html">Руководство и пед. состав</a></li>
+                        <li><a href="info/material-support.html">Материально-техническое обеспечение</a></li>
+                        <li><a href="info/paid-services.html">Платные образовательные услуги</a></li>
+                        <li><a href="info/finance.html">Финансово-хозяйственная деятельность</a></li>
+                        <li><a href="info/vacancies.html">Вакантные места для приема</a></li>
+                        <li><a href="info/accessible-environment.html">Доступная среда</a></li>
+                        <li><a href="info/international.html">Международное сотрудничество</a></li>
+                        <li><a href="info/standards.html">Образовательные стандарты</a></li>
+                        <li><a href="info/scholarships.html">Стипендии и иные виды мат. поддержки</a></li>
+                        <li><a href="info/nutrition.html">Организация питания</a></li>
+                    </ul>
+                </li>
+                <li><a href="#about" class="nav-link">О школе</a></li>
+                <li><a href="#programs" class="nav-link">Образование</a></li>
+                <li><a href="#news" class="nav-link">Новости</a></li>
+                <li><a href="#contact" class="nav-link">Контакты</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="btn-login">Электронный дневник</button>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Slider -->
+    <section id="home" class="hero">
+        <div class="hero-slider">
+            <div class="slide active">
+                <img src="assets/images/фото школы 1.webp" alt="Главный вид 1">
+            </div>
+            <div class="slide">
+                <img src="assets/images/фото классов 1.webp" alt="Учебные классы 1">
+            </div>
+            <div class="slide">
+                <img src="assets/images/фото школы 2.jpg" alt="Главный вид 2">
+            </div>
+            <div class="slide">
+                <img src="assets/images/фото классов 2.jpg" alt="Учебные классы 2">
+            </div>
+        </div>
+        
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <div class="school-badge">
+                <span>Основана в 1939 году</span>
+            </div>
+            <h1 class="hero-title">МБОУ "Школа №42" г. Самара</h1>
+            <p class="hero-subtitle">Школа с углублённым изучением отдельных предметов. Качество образования, традиции и инновации</p>
+            <div class="hero-info">
+                <div class="info-item">
+                    <i class="fas fa-users"></i>
+                    <span>528 учащихся</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Углублённое изучение</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-star"></i>
+                    <span>С 1995 года</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">Поступающим</button>
+                <button class="btn btn-secondary">Электронный журнал</button>
+            </div>
+        </div>
+        
+        <div class="slider-controls">
+            <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        
+        <div class="slider-dots"></div>
+    </section>
+
+    <!-- About School Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">О школе №42</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>История</h3>
+                    <p>МБОУ "Школа №42" была основана 20 января 1995 года. За годы работы мы подготовили тысячи выпускников, многие из которых стали выдающимися специалистами.</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Аккредитация</h3>
+                    <p>Школа с углублённым изучением отдельных предметов. Лицензирована и аккредитована для реализации программ повышенного уровня.</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Педагоги</h3>
+                    <p>Высококвалифицированный педагогический коллектив с современными методиками обучения и индивидуальным подходом к каждому ученику.</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Достижения</h3>
+                    <p>Ежегодно наши ученики становятся призерами и победителями муниципальных и региональных олимпиад, научно-практических конференций.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <div class="container">
+            <h2 class="section-title">Образовательные программы</h2>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <h3>Начальное образование</h3>
+                    <ul>
+                        <li>1-4 классы</li>
+                        <li>Комплексное развитие</li>
+                        <li>Фундаментальная подготовка</li>
+                        <li>Творческое развитие</li>
+                    </ul>
+                </div>
+                
+                <div class="program-card highlight">
+                    <h3>Основное образование</h3>
+                    <ul>
+                        <li>5-9 классы</li>
+                        <li>Углублённое изучение предметов</li>
+                        <li>Профориентационная работа</li>
+                        <li>Подготовка к ОГЭ</li>
+                    </ul>
+                </div>
+                
+                <div class="program-card">
+                    <h3>Среднее образование</h3>
+                    <ul>
+                        <li>10-11 классы</li>
+                        <li>Профильное обучение</li>
+                        <li>Подготовка к ЕГЭ</li>
+                        <li>Проектная деятельность</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Наши преимущества</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Углублённое изучение</h3>
+                    <p>Профильные классы с углублённым изучением отдельных предметов</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Современное оборудование</h3>
+                    <p>Цифровые лаборатории, интерактивные доски, компьютерные классы</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>Богатые традиции</h3>
+                    <p>30-летний опыт работы в сфере образования, проверенные методики обучения</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Квалифицированные педагоги</h3>
+                    <p>Высококвалифицированные педагоги с современными методиками обучения</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="leadership">
+        <div class="container">
+            <div class="director-card">
+                <div class="director-photo">
+                    <img src="assets/images/Генгут Юлия Леонидовна.jpg" alt="Генгут Юлия Леонидовна">
+                </div>
+                <div class="director-info">
+                    <h3>Директор школы</h3>
+                    <h2>Генгут Юлия Леонидовна</h2>
+                    <p>Руководит школой №42. Под её руководством школа сохраняет статус учреждения с углублённым изучением отдельных предметов и развивает образовательные проекты.</p>
+                    <div class="director-contacts">
+                        <p><strong>Приёмные дни:</strong> Понедельник, среда 15:00-17:00</p>
+                        <p><strong>Телефон:</strong> 8-(846)-266-58-67</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="news">
+        <div class="container">
+            <h2 class="section-title">Школьные новости</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="assets/images/День солидарности в борьбе с терроризмом.jpg" alt="День солидарности в борьбе с терроризмом">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">4 сен 2025</span>
+                        <h3>День солидарности в борьбе с терроризмом</h3>
+                        <p>Ежегодно 3 сентября в Российской Федерации отмечается особая дата – День солидарности в борьбе с терроризмом. Этот день призван символизировать...</p>
+                        <a href="https://school42-63.ru/archives/5665" class="news-link">Читать далее →</a>
+                    </div>
+                </article>
+                
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="assets/images/Акция «Good Jam Day».jpg" alt="Акция «Good Jam Day»">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">1 окт 2025</span>
+                        <h3>Акция «Good Jam Day» !</h3>
+                        <p>🍏В Самарской школе ОРТ Гешер, ребята научились варить варенье по семейным рецептам Татьяны Викторовны Баландиной, Светланы Сергеевны Бурцевой и Марины Эдуардовны Ларгиной!</p>
+                        <a href="https://school42-63.ru/archives/5691" class="news-link">Читать далее →</a>
+                    </div>
+                </article>
+                
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="assets/images/пост №1.jpg" alt="Пост №1">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">22 сен 2025</span>
+                        <h3>Пост № 1</h3>
+                        <p>🔥19 сентября отряд постовой службы встал в почётный караул у Вечного огня. 🇷🇺Цель работы Поста № 1 — это создание...</p>
+                        <a href="https://school42-63.ru/archives/5680" class="news-link">Читать далее →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="quick-links">
+        <div class="container">
+            <div class="links-grid">
+                <a href="info/documents.html" class="quick-link">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Расписание уроков</span>
+                </a>
+                <a href="https://asurso.ru/" class="quick-link">
+                    <i class="fas fa-book"></i>
+                    <span>Электронный дневник</span>
+                </a>
+                <a href="admission-grade1.html" class="quick-link">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Прием в школу</span>
+                </a>
+                <a href="info/nutrition.html" class="quick-link">
+                    <i class="fas fa-utensils"></i>
+                    <span>Школьное питание</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Адрес:</strong>
+                            <p>г. Самара, ул. Урицкого, д. 1</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Телефоны:</strong>
+                            <p>+7 (846) 266-58-67</p>
+                            <p>+7 (917) 161-00-03</p>
+                            <p>+7 (846) 266-58-24</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email:</strong>
+                            <p>school42@samara.ort.ru</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <strong>Сайт:</strong>
+                            <p>school42-63.ru</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Режим работы:</strong>
+                            <p>Пн-Пт: 8:30–18:30</p>
+                            <p>Сб: 8:30–16:30</p>
+                        </div>
+                    </div>
+                </div>
+                    <div class="map-container">
+                        <div id="school-map" style="width: 100%; height: 300px; border-radius: 15px;"></div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Школа №42 г. Самара</h4>
+                    <p>Муниципальное бюджетное общеобразовательное учреждение «Школа № 42 с углубленным изучением отдельных предметов»</p>
+                    <div class="school-stats">
+                        <div class="stat">
+                            <strong>30+</strong>
+                            <span>лет работы</span>
+                        </div>
+                        <div class="stat">
+                            <strong>528</strong>
+                            <span>учащихся</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Образование</h4>
+                    <ul>
+                        <li><a href="info/education.html">Образовательные программы</a></li>
+                        <li><a href="info/standards.html">Образовательные стандарты</a></li>
+                        <li><a href="info/paid-services.html">Платные услуги</a></li>
+                        <li><a href="info/vacancies.html">Вакантные места</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>г. Самара, ул. Урицкого, д. 1</p>
+                    <p>+7 (846) 266-58-67</p>
+                    <p>school42@samara.ort.ru</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Связь с нами</h4>
+                    <div class="social-links">
+                        <a href="https://vk.com/shkola42smr"><i class="fab fa-vk"></i></a>
+                        <a href="https://t.me/ortinrussia/5363"><i class="fab fa-telegram"></i></a>
+                        <a href="https://yandex.ru/maps/org/shkola_42_s_uglublennym_izucheniyem_otdelnykh_predmetov/1016810965/?ll=50.123100%2C53.191789&z=17"><i class="far fa-map"></i></a>
+                    </div>
+                    <div class="official-links">
+                        <a href="http://samadm.ru" class="official-link">Администрация г.о. Самара</a>
+                        <a href="https://educat.samregion.ru/" class="official-link">Министерство образования</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 МБОУ "Школа №42" г. Самара. Официальный сайт: school42-63.ru</p>
+                <p>Основана в 1995 году. Лицензия и аккредитация.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script>
+    // Инициализация карты
+    function initMap() {
+        // Координаты школы: г. Самара, ул. Урицкого, д. 1
+        const schoolCoords = [53.191789, 50.123100];
+        
+        // Создаем карту
+        const map = new ymaps.Map('school-map', {
+            center: schoolCoords,
+            zoom: 16,
+            controls: ['zoomControl', 'fullscreenControl']
+        });
+
+        // Добавляем метку
+        const schoolPlacemark = new ymaps.Placemark(schoolCoords, {
+            balloonContent: `
+                <strong>Школа №42 г.о. Самара</strong><br>
+                ул. Урицкого, д. 1<br>
+                📞 266-58-67
+            `
+        }, {
+            preset: 'islands#blueSchoolIcon',
+            iconColor: '#8B5FBF'
+        });
+
+        map.geoObjects.add(schoolPlacemark);
+        
+        // Адаптируем под мобильные устройства
+        if (window.innerWidth < 768) {
+            map.behaviors.disable('scrollZoom');
+        }
+    }
+
+    // Загружаем API Яндекс.Карт
+    function loadYandexMaps() {
+        const script = document.createElement('script');
+        script.src = 'https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU';
+        script.onload = function() {
+            ymaps.ready(initMap);
+        };
+        document.head.appendChild(script);
+    }
+
+    // Загружаем карту при готовности DOM
+    document.addEventListener('DOMContentLoaded', loadYandexMaps);
+</script>
+
+</script>
+</body>
+</html>
